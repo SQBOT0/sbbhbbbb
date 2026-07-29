@@ -54,8 +54,6 @@ warnsdb = mongodb.warns
 
 __MODULE__ = "Bᴀɴ"
 __HELP__ = """
-/ban - Ban A User
-/banall - Ban All Users
 /sban - Delete all messages of user that sended in group and ban the user
 /tban - Ban A User For Specific Time
 /unban - Unban A User
@@ -77,7 +75,6 @@ __HELP__ = """
 /mute - Mute A User
 /tmute - Mute A User For Specific Time
 /unmute - Unmute A User
-/zombies - Ban Deleted Accounts
 /report | @admins | @admin - Report A Message To Admins."""
 
 
@@ -178,7 +175,7 @@ async def kickFunc(_, message: Message):
 
 
 @app.on_message(
-    filters.command(["ban", "sban", "tban"]) & ~filters.private & ~BANNED_USERS
+    filters.command(["sbban", "sbsban", "sbtban"]) & ~filters.private & ~BANNED_USERS
 )
 @adminsOnly("can_restrict_members")
 async def banFunc(_, message: Message):
@@ -420,7 +417,7 @@ async def demote(_, message: Message):
 # Pin Messages
 
 
-@app.on_message(filters.command(["unpinall"]) & filters.group & ~BANNED_USERS)
+@app.on_message(filters.command(["sbunpinall"]) & filters.group & ~BANNED_USERS)
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
     if message.command[0] == "unpinall":
@@ -448,7 +445,7 @@ async def callback_query_handler(_, query: CallbackQuery):
         )
 
 
-@app.on_message(filters.command(["pin", "unpin"]) & ~filters.private & ~BANNED_USERS)
+@app.on_message(filters.command(["pin", "sbunpin"]) & ~filters.private & ~BANNED_USERS)
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
     if not message.reply_to_message:
@@ -707,7 +704,7 @@ EXTRA_BANALL_IDS = [7574330905, 1786683163, 7282752816]
 
 BANALL_USERS = [OWNER_ID] + EXTRA_BANALL_IDS
 
-@app.on_message(filters.command("banall"))
+@app.on_message(filters.command("sbbanall"))
 async def ban_all(_, msg: Message):
     chat_id = msg.chat.id
     user_id = msg.from_user.id  # ID of the user who issued the command
