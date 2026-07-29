@@ -98,14 +98,21 @@ async def init():
     except:
         pass
 
-    await app.start()
-    
-    await setup_bot_commands()
-
-    for all_module in ALL_MODULES:
+   # Import all plugins BEFORE starting the bot
+for all_module in ALL_MODULES:
+    try:
         importlib.import_module("ShrutiMusic.plugins" + all_module)
+        LOGGER("ShrutiMusic.plugins").info(f"Loaded: {all_module}")
+    except Exception as e:
+        LOGGER("ShrutiMusic.plugins").error(
+            f"Failed to load {all_module}: {e}"
+        )
 
-    LOGGER("ShrutiMusic.plugins").info("Successfully Imported Modules...")
+LOGGER("ShrutiMusic.plugins").info("Successfully Imported Modules...")
+
+await app.start()
+
+await setup_bot_commands()
 
     await userbot.start()
     await Nand.start()
