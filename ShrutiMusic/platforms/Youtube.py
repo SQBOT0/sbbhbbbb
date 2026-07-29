@@ -74,7 +74,7 @@ async def download_video(link: str) -> str:
                 if resp.status != 200:
                     return None
                 with open(file_path, "wb") as f:
-                    async for chunk in resp.content.iter_chunked(131072):
+                    async for chunk in resp.content.iter_chunked(524288):
                         f.write(chunk)
         if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
             return file_path
