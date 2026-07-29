@@ -194,8 +194,6 @@ HELP_17 = """
 
 HELP_18 = """
 <b><u>ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs</b></u>
-/ban - Ban A User
-/banall - Ban All Users
 /sban - Delete all messages of user that sended in group and ban the user
 /tban - Ban A User For Specific Time
 /unban - Unban A User
@@ -217,7 +215,6 @@ HELP_18 = """
 /mute - Mute A User
 /tmute - Mute A User For Specific Time
 /unmute - Unmute A User
-/zombies - Ban Deleted Accounts
 /report | @admins | @admin - Report A Message To Admins.
 """
 
@@ -371,8 +368,7 @@ HELP_37 = """🤖 <b>ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴛʜᴇsᴇ ʙᴏᴛs</b> �
 
 🔹 <b>ᴛʜɪs ғᴜɴᴄᴛɪᴏɴ ɪs sᴜᴘᴘᴏʀᴛᴇᴅ ɪɴ:</b>  
 
-• @ShrutixMusicbot – <b>Sʜʀᴜᴛɪ Mᴜsɪᴄ Bᴏᴛ</b>  
-• @M4_Music_BoT – <b>M4 Mᴜsɪᴄ Bᴏᴛ</b>  
+enjoy 
 
 ✨ <b>ᴜsᴇ ᴛʜᴇsᴇ ʙᴏᴛs ᴛᴏ ᴇɴᴊᴏʏ ᴛʜɪs ғᴇᴀᴛᴜʀᴇ ғᴜʟʟʏ.</b>"""
 
