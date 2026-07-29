@@ -1,28 +1,5 @@
-# Copyright (c) 2025 Nand Yaduwanshi <NoxxOP>
-# Location: Supaul, Bihar
-#
-# All rights reserved.
-#
-# This code is the intellectual property of Nand Yaduwanshi.
-# You are not allowed to copy, modify, redistribute, or use this
-# code for commercial or personal projects without explicit permission.
-#
-# Allowed:
-# - Forking for personal learning
-# - Submitting improvements via pull requests
-#
-# Not Allowed:
-# - Claiming this code as your own
-# - Re-uploading without credit or permission
-# - Selling or using commercially
-#
-# Contact for permissions:
-# Email: badboy809075@gmail.com
-
-
 from typing import Union
-
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from ShrutiMusic.utils.inline.buttons import inline
 
 
 def queue_markup(
@@ -35,48 +12,55 @@ def queue_markup(
 ):
     not_dur = [
         [
-            InlineKeyboardButton(
+            inline._button(
                 text=_["QU_B_1"],
+                category="primary",
                 callback_data=f"GetQueued {CPLAY}|{videoid}",
             ),
-            InlineKeyboardButton(
+            inline._button(
                 text=_["CLOSE_BUTTON"],
+                category="danger",
                 callback_data="close",
             ),
         ]
     ]
     dur = [
         [
-            InlineKeyboardButton(
+            inline._button(
                 text=_["QU_B_2"].format(played, dur),
+                category="primary",
                 callback_data="GetTimer",
             )
         ],
         [
-            InlineKeyboardButton(
+            inline._button(
                 text=_["QU_B_1"],
+                category="primary",
                 callback_data=f"GetQueued {CPLAY}|{videoid}",
             ),
-            InlineKeyboardButton(
+            inline._button(
                 text=_["CLOSE_BUTTON"],
+                category="danger",
                 callback_data="close",
             ),
         ],
     ]
-    upl = InlineKeyboardMarkup(not_dur if DURATION == "Unknown" else dur)
+    upl = inline.ikm(not_dur if DURATION == "Unknown" else dur)
     return upl
 
 
 def queue_back_markup(_, CPLAY):
-    upl = InlineKeyboardMarkup(
+    upl = inline.ikm(
         [
             [
-                InlineKeyboardButton(
+                inline._button(
                     text=_["BACK_BUTTON"],
+                    category="primary",
                     callback_data=f"queue_back_timer {CPLAY}",
                 ),
-                InlineKeyboardButton(
+                inline._button(
                     text=_["CLOSE_BUTTON"],
+                    category="danger",
                     callback_data="close",
                 ),
             ]
@@ -88,22 +72,11 @@ def queue_back_markup(_, CPLAY):
 def aq_markup(_, chat_id):
     buttons = [
         [
-            InlineKeyboardButton(
-                    text=_["CLOSE_BUTTON"],
-                    callback_data="close",
+            inline._button(
+                text=_["CLOSE_BUTTON"],
+                category="danger",
+                callback_data="close",
             ),
         ],
     ]
     return buttons
-
-
-# ©️ Copyright Reserved - @NoxxOP  Nand Yaduwanshi
-
-# ===========================================
-# ©️ 2025 Nand Yaduwanshi (aka @NoxxOP)
-# 🔗 GitHub : https://github.com/NoxxOP/ShrutiMusic
-# 📢 Telegram Channel : https://t.me/ShrutiBots
-# ===========================================
-
-
-# ❤️ Love From ShrutiBots 
