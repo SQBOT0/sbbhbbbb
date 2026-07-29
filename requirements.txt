@@ -2,7 +2,6 @@ pyrofork
 gTTS
 aiofiles
 aiohttp
-asyncio
 beautifulsoup4
 dnspython
 ffmpeg-python
@@ -14,26 +13,20 @@ motor
 numpy
 opencv-python
 pytz
-pillow==9.5.0
+Pillow==9.5.0
 psutil
 py-tgcalls==0.9.7
 pykeyboard
-kurigram==2.1.35
+kurigram>=2.2.23
 python-dotenv
-pyyaml
+PyYAML
 requests
 speedtest-cli
 spotipy
 tgcrypto
-telegraph 
-unidecode
+telegraph
+Unidecode
 youtube-search
 youtube-search-python
 py-yt-search
 yt-dlp
-# ===========================================
-# ©️ 2025 Nand Yaduwanshi , aka @NoxxOP
-# 🔗 GitHub : https://github.com/NoxxOP/ShrutiMusic
-# 📢 Telegram Channel : https://t.me/ShrutiBots
-# ===========================================
-
