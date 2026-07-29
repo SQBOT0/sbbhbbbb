@@ -1,6 +1,6 @@
 
-from pyrogram import Client, filters
-from pyrogram.types import Message
+from kurigram import Client, filters
+from kurigram.types import Message
 import os
 import math
 import time
