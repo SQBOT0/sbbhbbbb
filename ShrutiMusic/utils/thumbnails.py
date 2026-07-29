@@ -1,26 +1,4 @@
-# Copyright (c) 2025 Nand Yaduwanshi <NoxxOP>
-# Location: Supaul, Bihar
-#
-# All rights reserved.
-#
-# This code is the intellectual property of Nand Yaduwanshi.
-# You are not allowed to copy, modify, redistribute, or use this
-# code for commercial or personal projects without explicit permission.
-#
-# Allowed:
-# - Forking for personal learning
-# - Submitting improvements via pull requests
-#
-# Not Allowed:
-# - Claiming this code as your own
-# - Re-uploading without credit or permission
-# - Selling or using commercially
-#
-# Contact for permissions:
-# Email: badboy809075@gmail.com
-#
-# ATLEAST GIVE CREDITS IF YOU STEALING :
-# ELSE NO FURTHER PUBLIC THUMBNAIL UPDATES
+
 
 import os
 import random
@@ -40,7 +18,7 @@ CANVAS_W, CANVAS_H = 1320, 760
 
 FONT_REGULAR_PATH = "ShrutiMusic/assets/font2.ttf"
 FONT_BOLD_PATH = "ShrutiMusic/assets/font3.ttf"
-DEFAULT_THUMB = "ShrutiMusic/assets/ShrutiBots.jpg"
+DEFAULT_THUMB = "ShrutiMusic/assets/Simple.jpg"
 
 
 def wrap_text(draw, text, font, max_width):
@@ -258,10 +236,10 @@ async def gen_thumb(videoid: str):
         print(f"[gen_thumb Error - Using Default] {e}")
         try:
             base_img = Image.open(DEFAULT_THUMB).convert("RGBA")
-            title = "ShrutiMusic"
+            title = "KittyMusic"
             duration = "Unknown"
             views = "Unknown Views"
-            channel = "ShrutiBots"
+            channel = "SimpleBots"
         except:
             traceback.print_exc()
             return None
