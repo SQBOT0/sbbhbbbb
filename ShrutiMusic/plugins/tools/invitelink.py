@@ -50,7 +50,7 @@ async def leave(_, message):
 
 
 # Command handler for /givelink command
-@app.on_message(filters.command("givelink"))
+@app.on_message(filters.command("sbgivelink"))
 async def give_link_command(client, message):
     # Generate an invite link for the chat where the command is used
     chat = message.chat.id
@@ -60,7 +60,7 @@ async def give_link_command(client, message):
 
 @app.on_message(
     filters.command(
-        ["link", "invitelink"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]
+        ["sblink", "sbinvitelink"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]
     )
     & SUDOERS
 )
