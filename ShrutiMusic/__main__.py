@@ -111,11 +111,16 @@ for all_module in ALL_MODULES:
 LOGGER("ShrutiMusic.plugins").info("Successfully Imported Modules...")
 
 await app.start()
-
 await setup_bot_commands()
+await userbot.start()
+await Nand.start()
 
-    await userbot.start()
-    await Nand.start()
+try:
+    await Nand.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
+except NoActiveGroupCall:
+    LOGGER("ShrutiMusic").error(
+        "Please turn on the videochat of your log group/channel.\n\nStopping Bot..."
+    )
 
     try:
         await Nand.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
