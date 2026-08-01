@@ -28,6 +28,7 @@ import config
 from ShrutiMusic.core.mongo import mongodb
 
 channeldb = mongodb.cplaymode
+usersdb = mongodb.users
 commanddb = mongodb.commands
 cleandb = mongodb.cleanmode
 playmodedb = mongodb.playmode
