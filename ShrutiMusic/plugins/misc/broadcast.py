@@ -75,7 +75,7 @@ async def braodcast_message(client, message, _):
 
         if "-wfchat" in message.text:
             sent_chats = 0
-            chats = [int(chat["chat_id"]) for chat in await get_served_chats()]
+            chats = [int(chat["_id"]) for chat in await get_served_chats()]
             for i in chats:
                 try:
                     if "-forward" in message.text:
@@ -150,7 +150,7 @@ async def braodcast_message(client, message, _):
         chats = []
         schats = await get_served_chats()
         for chat in schats:
-            chats.append(int(chat["chat_id"]))
+            chats.append(int(chat["_id"]))
         for i in chats:
             try:
                 if "-forward" in message.text and message.reply_to_message:
@@ -193,7 +193,7 @@ async def braodcast_message(client, message, _):
         served_users = []
         susers = await get_served_users()
         for user in susers:
-            served_users.append(int(user["user_id"]))
+            served_users.append(int(user["_id"]))
         for i in served_users:
             try:
                 if "-forward" in message.text and message.reply_to_message:
